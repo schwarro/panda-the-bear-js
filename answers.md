@@ -1,3 +1,5 @@
+<!-- Exercise 1 -->
+
 var profileImage = document.querySelector(".profile-image");
 profileImage.src = "https://placebear.com/400/400";
 
@@ -43,3 +45,28 @@ placeHolderSubmit.setAttribute("disabled", true);
 
 var info = document.querySelectorAll(".bio-info");
 for (var i = 0; i < info.length; i++) {info[i].textContent = "";}
+
+<!-- Exercise 2 -->
+var timeTravel = document.querySelector("#time-travel");
+timeTravel.parentNode.removeChild(timeTravel);
+
+var pikachu = document.querySelector("#right-image img");
+var clonePikachu = pikachu.cloneNode(true);
+for (var i = 0; i < 10; i++) {
+  var pikachu = document.querySelector("#right-image img");
+  var clonePikachu = pikachu.cloneNode(true);
+  document.querySelector(".portfolio-container").appendChild(clonePikachu);
+};
+
+var listItem = document.createElement('li');
+var leftSpan = document.createElement('span');
+var lastUpdated = document.createTextNode('Page last updated on');
+leftSpan.appendChild(lastUpdated);
+listItem.appendChild(leftSpan);
+var bio = document.querySelector(".bio-info");
+bio.appendChild(listItem);
+var currentDate = new Date();
+var rightSpan = document.createElement('span');
+var updatedOn = document.createTextNode(currentDate);
+rightSpan.appendChild(updatedOn);
+listItem.appendChild(rightSpan);
